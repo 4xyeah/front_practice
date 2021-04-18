@@ -1,5 +1,4 @@
 const startBtn = document.querySelector('button');
-
 const toDoArr = [];
 
 startBtn.addEventListener('click', () => {
@@ -35,7 +34,7 @@ const choose = (choice) => {
 		if (choice === 'new') {
 			let newToDo = window.prompt('추가할 toDo를 입력해주세요.');
 			toDoArr.push(newToDo);
-			console.log(`toDo List에 ${newToDo}가 추가.`);
+			console.log(`toDo List에 ${newToDo} 추가.`);
 		} else if (choice === 'list') {
 			console.log(listDeco);
 			let i = 0;
@@ -44,7 +43,7 @@ const choose = (choice) => {
 			}
 			console.log(listDeco);
 		} else if (choice === 'delete') {
-			let deleteNum = parseInt(window.prompt('삭제할 todo의 번호를 입력해주세요.'));
+			const deleteNum = parseInt(window.prompt('삭제할 todo의 번호를 입력해주세요.'));
 			if (0 < deleteNum && deleteNum <= toDoArr.length) {
 				// let deleteCount = toDoArr.splice(deleteNum, 1);
 				// if (deleteCount === 0) {
