@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Score Game</title>
+		<link rel="stylesheet" href="app.css" />
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<img src="https://activeforlife.com/content/uploads/2018/07/soccer-ball-2121x1414-989x660.jpg" alt="soccerImage" />
+				<h1><span id="p1">0</span> to <span id="p2">0</span></h1>
+				<p>Click the button below</p>
+				<div class="selectContainer">
+					<span><b>Playing To</b></span>
+					<select name="" id="playTo">
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+				<!-- end of selectContainer-->
+				<div class="btnContainer">
+					<button id="p1Btn">+1 Player 1</button>
+					<button id="p2Btn">+1 Player 2</button>
+					<button id="resetBtn">RESET</button>
+				</div>
+			</div>
+		</main>
+		<script src="app.js"></script>
+	</body>
+</html>
