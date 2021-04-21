@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="pokemon.css" />
+		<title>Pokemon Search</title>
+	</head>
+	<body>
+		<section class="search">
+			<h1>Pokemon Search</h1>
+			<p>Search Pokemon!</p>
+			<p>You should input a correct pokemon name/number(1-898)</p>
+			<form id="searchForm">
+				<input type="text" placeholder="Pokemon name/number" name="pokeInput" required />
+				<button id="searchBtn">Search</button>
+				<button id="resetBtn" type="button">Reset</button>
+			</form>
+		</section>
+		<section class="pokemon">
+			<ul class="pokemonList"></ul>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="pokemon.js"></script>
+	</body>
+</html>
