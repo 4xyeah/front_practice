@@ -4,7 +4,7 @@ const form = document.querySelector('#searchForm');
 const pokemonList = document.querySelector('.pokemonList');
 const pokeAPI = 'http://pokeapi.co/api/v2/pokemon/';
 const resetBtn = document.querySelector('#resetBtn');
-const pokemonImgArr = document.querySelectorAll('.pokemonList img');
+let pokemonImgArr = '';
 
 const makePokemon = (pokemon) => {
 	const list = document.createElement('LI');
@@ -34,15 +34,16 @@ const removeAllPokemon = () => {
 	}
 };
 
-const removeClickedPokemon = function () {
-	console.log(this);
+const deleteThisPokemon = function (el) {
+	this.parentNode.parentNode.removeChild(this.parentNode);
 };
 
-// event bubbling, event delegation
-for (pokemonImg of pokemonImgArr) {
-	pokemonImg.addEventListener('click', removeClickedPokemon);
-}
-
+const addClickDeleteEvt = function () {
+	pokemonImgArr = document.querySelectorAll('.pokemonList img');
+	for (pokemonImg of pokemonImgArr) {
+		pokemonImg.addEventListener('click', deleteThisPokemon);
+	}
+};
 resetBtn.addEventListener('click', removeAllPokemon);
 
 form.addEventListener('submit', async function (e) {
@@ -52,6 +53,7 @@ form.addEventListener('submit', async function (e) {
 		pokemonInput = form.elements.pokeInput.value.toLowerCase();
 		const res = await axios.get(`${pokeAPI}${pokemonInput}`);
 		addPokemon(res.data);
+		addClickDeleteEvt();
 	} catch (e) {
 		alert(`Wrong Input, pokemon >>${pokemonInput}<< does not exist!`);
 		console.log(e);
